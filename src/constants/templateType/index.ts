@@ -1,4 +1,4 @@
 export enum TemplateType {
-    LIGHT,
-    DARK
+    LIGHT = 'LIGHT',
+    DARK = 'DARK'
 }
