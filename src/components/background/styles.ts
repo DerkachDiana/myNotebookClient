@@ -7,7 +7,7 @@ export const BackgroundColor = styled.View`
 
 export const MyImg = styled.ImageBackground`
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
   padding: 20px;
 `;

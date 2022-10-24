@@ -9,19 +9,22 @@ import { Icons } from '../../../assets/Icons';
 import { Colors } from '../../../constants/colors';
 import { TemplateType } from '../../../constants/templateType';
 
-import { HeaderContainer } from './styles';
+import { AddButtonIcon, ColorWheelIcon, HeaderContainer, HeaderNotebooksContainer } from './styles';
 
 const Main = () => {
   return (
     <Background templateType={TemplateType.LIGHT} backgroundColor={Colors.DARKBLUE}>
-      <HeaderContainer>
-        <Title text={'Notebooks'} color={Colors.LIGHTGOLD}/>
-        <Image source={Icons.colorWheel}/>
-      </HeaderContainer>
-      <NotebookContainer
-        notebookName={'Diary'}
-        cover={require('../../../assets/mockCovers/pink-cover.png')}
-      />
+      <HeaderNotebooksContainer>
+        <HeaderContainer>
+          <Title text={'Notebooks'} color={Colors.LIGHTGOLD}/>
+          <ColorWheelIcon source={Icons.colorWheel} />
+        </HeaderContainer>
+        <NotebookContainer
+          notebookName={'Diary'}
+          cover={require('../../../assets/mockCovers/pink-cover.png')}
+        />
+      </HeaderNotebooksContainer>
+      <AddButtonIcon source={Icons.addButton}/>
     </Background>
   );
 };
