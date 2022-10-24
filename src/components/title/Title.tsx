@@ -4,10 +4,10 @@ import { Colors } from '../../constants/colors';
 
 import { MainTitle } from './styles';
 
-interface TitleProps {
+type TitleProps = {
   text: string
   color: Colors
-}
+};
 
 const Title = ({ text, color }: TitleProps) => {
   return (

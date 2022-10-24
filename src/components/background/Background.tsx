@@ -8,11 +8,11 @@ import { BackgroundColor, MyImg } from './styles';
 const lightBackground = require('../../assets/backgroundTemplates/template-for-dark.png');
 const darkBackground = require( '../../assets/backgroundTemplates/template-for-light.png');
 
-interface BackgroundProps {
+type BackgroundProps = {
   backgroundColor:  Colors,
   templateType: TemplateType
   children: React.ReactNode
-}
+};
 
 const Background = ({ backgroundColor, templateType, children }: BackgroundProps) => {
   const backgroundTemplate = () => {
