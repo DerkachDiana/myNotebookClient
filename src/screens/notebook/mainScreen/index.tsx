@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 
 import Background from '../../../components/background/Background';
+import NotebookContainer from '../../../components/noteboookContainer';
 import Title from '../../../components/title/Title';
 
 import { Icons } from '../../../assets/Icons';
@@ -17,6 +18,10 @@ const Main = () => {
         <Title text={'Notebooks'} color={Colors.LIGHTGOLD}/>
         <Image source={Icons.colorWheel}/>
       </HeaderContainer>
+      <NotebookContainer
+        notebookName={'Diary'}
+        cover={require('../../../assets/mockCovers/pink-cover.png')}
+      />
     </Background>
   );
 };
