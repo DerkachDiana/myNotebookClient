@@ -7,7 +7,7 @@ import { Icons } from '../../assets/Icons';
 import { Colors } from '../../constants/colors';
 import { TemplateType } from '../../constants/templateType';
 
-import { LoginFrame, LoginInput, SignInButton, SignInButtonText,SignUpButton, SignUpButtonText } from './styles';
+import { ButtonText, LoginFrame, LoginInput, SignInButton, SignUpButton } from './styles';
 
 export const Login = () => {
   return (
@@ -17,10 +17,10 @@ export const Login = () => {
         <LoginInput placeholder={'Login'} maxLength={40} placeholderTextColor={Colors.GOLD}/>
         <LoginInput placeholder={'Password'} placeholderTextColor={Colors.GOLD} secureTextEntry={true}/>
         <SignInButton>
-          <SignInButtonText>Sign in</SignInButtonText>
+          <ButtonText color={Colors.DARKBLUE}>Sign in</ButtonText>
         </SignInButton>
         <SignUpButton>
-          <SignUpButtonText>Sign up</SignUpButtonText>
+          <ButtonText color={Colors.LIGHTGOLD}>Sign up</ButtonText>
         </SignUpButton>
       </LoginFrame>
     </Background>

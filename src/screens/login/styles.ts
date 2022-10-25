@@ -24,6 +24,7 @@ export const LoginInput = styled.TextInput`
   margin-top: 10px;
   font-size: 15px;
   color: ${Colors.LIGHTGOLD}
+  font-family: 'playfair_display_regular';
 `;
 
 export const SignInButton = styled.TouchableOpacity`
@@ -41,11 +42,7 @@ export const SignUpButton = styled.TouchableOpacity`
   margin-top: 10px;
 `;
 
-export const SignUpButtonText = styled.Text`
-  color:  ${Colors.LIGHTGOLD}
+export const ButtonText = styled.Text`
+  color:  ${(props) => props.color}
+  font-family: 'playfair_display_regular';
 `;
-
-export const SignInButtonText = styled.Text`
-  color: ${Colors.DARKBLUE}
-`;
-
