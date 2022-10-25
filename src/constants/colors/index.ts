@@ -7,5 +7,6 @@ export enum Colors {
     VIOLET = '#615D70',
     LIGHTGOLD = '#DCD2C2',
     PINK = '#C8B1A3',
-    WHITE = '#E2DEDD'
+    WHITE = '#E2DEDD',
+    OPACITYWHITE = 'rgba(226, 222, 221, 0.2)'
 }

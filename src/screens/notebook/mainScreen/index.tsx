@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import Background from '../../../components/background/Background';
 import NotebookContainer from '../../../components/noteboookContainer';

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Main from './src/screens/notebook/mainScreen';
+import { Login } from './src/screens/login';
 
 const App = () => {
   return (
-    <Main/>
+    <Login/>
   );
 };
 
