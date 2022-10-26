@@ -3,3 +3,8 @@ export type UserType = {
     exp: number,
     iat: number
 };
+
+export type StackParams = {
+    Login;
+    Main;
+};

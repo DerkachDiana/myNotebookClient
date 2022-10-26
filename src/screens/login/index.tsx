@@ -1,5 +1,8 @@
 import React, { FC, useState } from 'react';
 
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import { login, registration } from '../../api/userAPI';
 
 import Background from '../../components/background/Background';
@@ -8,11 +11,12 @@ import Title from '../../components/title/Title';
 import { Icons } from '../../assets/Icons';
 import { Colors } from '../../constants/colors';
 import { TemplateType } from '../../constants/templateType';
-import { UserType } from '../../types/types';
+import { StackParams, UserType } from '../../types/types';
 
 import { ButtonText, LoginFrame, LoginInput, SignInButton, SignUpButton } from './styles';
 
-export const Login: FC = () => {
+const Login: FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
   const [email, setEmail] = useState<string | undefined>();
   const [password, setPassword] =useState<string | undefined>();
   const [user, setUser] = useState<UserType | undefined>();
@@ -21,6 +25,7 @@ export const Login: FC = () => {
     const userData = await login(email, password);
     if (userData) {
       setUser(userData);
+      navigation.navigate('Main');
     }
   };
 
@@ -59,3 +64,5 @@ export const Login: FC = () => {
     </Background>
   );
 };
+
+export default Login;
