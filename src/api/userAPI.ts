@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios';
 import jwt_decode from 'jwt-decode';
 
 import { UserType } from '../types/types';
@@ -5,25 +6,25 @@ import { UserType } from '../types/types';
 import { host } from './networkClient';
 
 interface ILogin {
-   token: string
+   token: string,
 }
 
-export const registration = async (email, password): Promise<UserType | void> => {
+export const registration = async (email, password): Promise<UserType | number | void> => {
   try {
     const { data } = await host.post<ILogin>('api/user/registration', { email, password });
 
     return jwt_decode(data.token);
   } catch (e) {
-    console.log(e);
+    throw (e as AxiosError).response?.status;
   }
 };
 
-export const login = async (email, password): Promise<UserType | void> => {
+export const login = async (email, password): Promise<UserType | number | void> => {
   try {
     const { data } = await host.post<ILogin>('api/user/login', { email, password });
 
     return jwt_decode(data.token);
   } catch (e) {
-    console.log(e);
+    throw (e as AxiosError).response?.status;
   }
 };
