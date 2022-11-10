@@ -9,7 +9,7 @@ interface ILogin {
    token: string,
 }
 
-export const registration = async (email, password): Promise<UserType | number | void> => {
+export const registration = async (email, password): Promise<UserType> => {
   try {
     const { data } = await host.post<ILogin>('api/user/registration', { email, password });
 
@@ -19,7 +19,7 @@ export const registration = async (email, password): Promise<UserType | number |
   }
 };
 
-export const login = async (email, password): Promise<UserType | number | void> => {
+export const login = async (email, password): Promise<UserType> => {
   try {
     const { data } = await host.post<ILogin>('api/user/login', { email, password });
 
