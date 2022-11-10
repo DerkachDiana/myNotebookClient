@@ -15,7 +15,8 @@ import { Icons } from '../../assets/Icons';
 import { Colors } from '../../constants/colors';
 import { TemplateType } from '../../constants/templateType';
 import Text from '../../constants/text';
-import { StackParams, UserType } from '../../types/types';
+import { userStore } from '../../stores/UserStore';
+import { StackParams } from '../../types/types';
 
 import { ButtonText, ErrorLogin, LoginFrame, LoginInput, SignInButton, SignUpButton, TextError } from './styles';
 
@@ -23,14 +24,13 @@ const Login: FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] =useState<string | undefined>();
-  const [user, setUser] = useState<UserType | undefined>();
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
   const signIn = async (): Promise<void> => {
     try {
       setErrorMessage(undefined);
       const userData = await login(email, password);
-      setUser(userData as UserType);
+      userStore.setUser(userData);
       navigation.navigate('Main');
     } catch (e) {
       setErrorMessage(ERROR_MESSAGE[e as number]);
@@ -46,7 +46,7 @@ const Login: FC = () => {
     try {
       setErrorMessage(undefined);
       const userData = await registration(email, password);
-      setUser((userData as UserType));
+      userStore.setUser(userData);
       navigation.navigate('Main');
     } catch (e) {
       setErrorMessage(ERROR_MESSAGE[e as number]);
