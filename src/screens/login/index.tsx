@@ -7,7 +7,6 @@ import * as EmailValidator from 'email-validator';
 import { login, registration } from '../../api/userAPI';
 
 import Background from '../../components/background/Background';
-import Title from '../../components/title/Title';
 import { ErrorWindow } from './components/errorWindow';
 
 import { ERROR_MESSAGE } from '../../../errors/errors';
@@ -15,10 +14,12 @@ import { Icons } from '../../assets/Icons';
 import { Colors } from '../../constants/colors';
 import { TemplateType } from '../../constants/templateType';
 import Text from '../../constants/text';
+import { TextType } from '../../constants/textType';
+import { TextStyle } from '../../constants/textType/styles';
 import { userStore } from '../../stores/UserStore';
 import { StackParams } from '../../types/types';
 
-import { ButtonText, ErrorLogin, LoginFrame, LoginInput, SignInButton, SignUpButton, TextError } from './styles';
+import { ButtonText, ErrorLogin, LoginFrame, LoginInput, SignInButton, SignUpButton } from './styles';
 
 const Login: FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
@@ -61,13 +62,13 @@ const Login: FC = () => {
         <Input
           placeholder={'Email'}
           maxLength={40}
-          placeholderTextColor={Colors.GOLD}
+          placeholderTextColor={Colors.WHITE}
           onChangeText={setEmail}
           value={email}
         />
         <Input
           placeholder={'Password'}
-          placeholderTextColor={Colors.GOLD}
+          placeholderTextColor={Colors.WHITE}
           secureTextEntry={true}
           onChangeText={setPassword}
           value={password}
@@ -78,7 +79,7 @@ const Login: FC = () => {
 
   return (
     <Background backgroundColor={Colors.DARKBLUE} templateType={TemplateType.LIGHT}>
-      <Title text={'Login'} color={Colors.LIGHTGOLD}/>
+      <TextStyle textType={TextType.title}>Login</TextStyle>
       <LoginFrame source={Icons.loginFrame}>
         {renderLogin()}
         <SignInButton onPress={signIn}>
